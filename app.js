@@ -8,6 +8,10 @@ const app = express();
 
 app.use(bodyparser.json());
 
+app.get('/',(request, response) => {
+  response.json({Message: 'Hello There 🙋‍♂️!!! '});
+});
+
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log('connected to the MongoDB');
